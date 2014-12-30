@@ -78,26 +78,10 @@
         <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
         <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <script src="scripts/templates.js"></script>
-        <script src="scripts/models/search.js"></script>
-        <script src="scripts/views/search.js"></script>
-        <script src="scripts/views/albumsearch.js"></script>
-        <script src="scripts/views/artistsearch.js"></script>
-        <script id="loading-template" type="text/x-handlebars-template">
-        loading...
-        </script>
-         <script id="artist-search-template" type="text/x-handlebars-template">
-          {{#each artists.items }}
-          <img style="border: 1px solid black; margin: 5px; width: 150px;" src="{{ images.[1].url }}">
-         {{/each}}
-        </script>
-        <script id="album-search-template" type="text/x-handlebars-template">
-          {{#each albums.items }}
-          <img style="border: 1px solid black; margin: 5px; width: 150px;" src="{{ images.[1].url }}">
-         {{/each}}
-        </script>
+        
+        <!-- build:js scripts/main.js -->
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
         <!-- endbuild -->
+
 </body>
 </html>
