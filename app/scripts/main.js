@@ -31,27 +31,25 @@ require([
     'backbone',
     'bootstrap',
     'models/search',
-    'views/search',
-    'views/albumsearch',
-    'views/artistsearch'
-    ], function ($, Backbone, bootstrap, SearchModel, SearchView, AlbumSearchView, ArtistSearchView) {
+    'routes/router'
+    ], function ($, Backbone, bootstrap, SearchModel, Router) {
       //main app init will go here
       $(document).ready(function () {
-        
-        window.searchModel = new SearchModel();
-        window.searchModel.fetch();
-        
-        window.searchView = new SearchView({
-            el: $("#search-container")
+
+        //creates an object with models and router properties
+        window.spotapp = { 
+            models: {}, 
+            router: {} 
+        };
+
+        spotapp.models.searchModel = new SearchModel();
+
+        spotapp.router = new Router({
+            searchModel: spotapp.models.searchModel
         });
 
-        window.albumSearchView = new AlbumSearchView({
-            el: $('#album-search-container')
-        });
-
-        window.artistSearchView = new ArtistSearchView({
-            el: $('#artist-search-container')
-        });
+        Backbone.history.start();
+        
     });
 
 });
