@@ -10,7 +10,8 @@ require.config({
     handlebars: '/bower_components/handlebars/handlebars',
     text: '/bower_components/requirejs-text/text',
     mocha: '../bower_components/mocha/mocha',
-    chai: '../bower_components/chai/chai'
+    chai: '../bower_components/chai/chai',
+    models: '/scripts/models'
   }
 });
 
@@ -28,6 +29,7 @@ define(function(require) {
   require([
 
   //our test scripts go here...
+  '../models/search.spec'
 
   ], function(require) {
     window.mocha.run();
